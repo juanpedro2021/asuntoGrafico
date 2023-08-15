@@ -4,6 +4,10 @@
  */
 package asuntografico;
 
+import javax.swing.JOptionPane;
+
+import java.util.Comparator;
+
 /**
  *
  * @author jfa_j
@@ -44,14 +48,8 @@ public class Registro extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Contraseña:");
 
-        ingresoUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ingresoUsuarioActionPerformed(evt);
-            }
-        });
-
         BotonReguistrarse.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        BotonReguistrarse.setForeground(new java.awt.Color(204, 204, 204));
+        BotonReguistrarse.setForeground(new java.awt.Color(255, 0, 0));
         BotonReguistrarse.setText("Registrar");
         BotonReguistrarse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,18 +65,20 @@ public class Registro extends javax.swing.JFrame {
                 .addGap(79, 79, 79)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(ingresoContra, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(40, 40, 40)
-                        .addComponent(ingresoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(76, 76, 76))))
+                        .addGap(76, 76, 76))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(40, 40, 40))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(20, 20, 20)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(ingresoContra)
+                            .addComponent(ingresoUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BotonReguistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -105,22 +105,37 @@ public class Registro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ingresoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresoUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ingresoUsuarioActionPerformed
-
     private void BotonReguistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonReguistrarseActionPerformed
-        // TODO add your handling code here:
+        
+        //creo el usuario el mail por defecto
+        String usuarioD="alumno@ulp.edu.ar";
+        String contraD = "12345678";
+        
+        //recibo lo que se ingresa
+        //try{
         String usuario = ingresoUsuario.getText();
-        String Contra = ingresoContra.getText();
+        String contra = ingresoContra.getText();
         
         //comparo
+        /*
+         Comparator<Pelicula> director = new Comparator<Pelicula>() {
+        @Override
+        public int compare(Pelicula p1, Pelicula p2) {
+            return p1.getDirector().compareTo(p2.getDirector());
+        }
+    };
+        */
         
+        
+        if (usuarioD.equals(usuario) & contraD.equals(contra)) {
+            //si es verdadero
+            JOptionPane.showMessageDialog(this,"BIENVENIDO");
+        }else{
+         JOptionPane.showMessageDialog(this,"usuario o contraseña incorrecto");
+        }
+        //}catch
     }//GEN-LAST:event_BotonReguistrarseActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
