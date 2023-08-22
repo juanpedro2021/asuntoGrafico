@@ -1,4 +1,4 @@
-package ejemplocombo;
+package ejemplos;
 
 
 public class Alumno {

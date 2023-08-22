@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package asuntografico;
+package Ejercicio_1;
 
 import javax.swing.JOptionPane;
 
@@ -117,15 +117,6 @@ public class Registro extends javax.swing.JFrame {
         String contra = ingresoContra.getText();
         
         //comparo
-        /*
-         Comparator<Pelicula> director = new Comparator<Pelicula>() {
-        @Override
-        public int compare(Pelicula p1, Pelicula p2) {
-            return p1.getDirector().compareTo(p2.getDirector());
-        }
-    };
-        */
-        
         
         if (usuarioD.equals(usuario) & contraD.equals(contra)) {
             //si es verdadero
